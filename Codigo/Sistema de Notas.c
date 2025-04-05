@@ -1,0 +1,195 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <windows.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese_Brazil");
+    system("cls");
+
+	int i,cont,alunos;
+    char continuar;
+
+    printf("\n------------------------");
+    printf("\n    Sistema de Notas    ");
+    printf("\n------------------------");
+
+    do{
+    printf("\nQuantas notas gostaria de Registrar?(faca um valor de 1 a 5)\n");
+    scanf("%d", &cont);
+    printf("\n-------------------------------");
+    }while(cont > 5 || cont <=0);
+
+    //variaveis que vão armazenar o valor do cont
+    float nota1[cont], nota2[cont], recup[cont],soma[cont];
+    bool Aprovado[cont];
+
+    //anotação das repostas dos alunos
+    for( i = 0; i < cont; i++)
+    {
+        
+        do{
+            nota1[i] = 0;
+            printf("\nQual foi a nota do aluno %d da Instituição?\n", i+1);
+            scanf("%f", &nota1[i]);
+        }while(nota1[i] > 5 || nota1[i] < 0); // while verifica se o valor é maior que 5 ou menor que 0
+
+        do{
+            nota2[i] = 0;
+            printf("\nQual foi a nota do aluno %d do professor?\n", i+1);
+            scanf("%f", &nota2[i]);
+        }while(nota2[i] > 5 || nota2[i] < 0); // while verifica se o valor é maior que 5 ou menor que 0
+
+        printf("\n-------------------------------");
+        soma[i] = nota2[i] + nota1[i]; // soma dos valores 
+
+        //arredondando os valores
+        
+    }
+
+    //verificando se aluno estão reprovado
+    for ( i = 0; i < cont; i++)
+    {
+        if(soma[i] >= 6)
+        {
+            printf("\nAluno %d: Aprovado\n", i+1);
+            printf("\n-------------------------------");
+            Aprovado[i] = true;
+        }else{
+            do{
+                printf("\nQual a nota do aluno %d na recuperação?\n", i+1);
+                scanf("%f", &recup[i]);
+            } while(recup[i] > 5 || recup[i] < 0);
+            // verifica se a nota da recuperação é maior que alguma das notas
+            if (recup[i] > nota1[i] || recup[i] > nota2[i])
+            {
+                if (nota1[i] > nota2[i])//troca das notas
+                {
+                    nota2[i] = recup[i];
+                }else{
+                    nota1[i] = recup[i];
+                }
+                soma[i] = nota1[i] + nota2[i]; 
+                Aprovado[i] = true;
+                printf("\nAluno %d: Aprovado", i+1);
+                printf("\n-------------------------------");
+            }else{
+                Aprovado[i] = false;
+                printf("\nAluno %d: Reprovado", i+1);
+                printf("\n-------------------------------");
+            }
+        }
+    }
+    //Buscando o aluno desejado
+   
+    Sleep(1500);
+    system("cls"); 
+
+    printf("\n----------------------------------");
+    printf("\n      Apresentando os alunos      ");
+    printf("\n----------------------------------");
+
+    //se escolher um numero entre 1 e 5 mesmo que o aluno 
+    do{
+        do{
+        printf("\nEscolha o aluno desejado de 1 a %d\n", cont);
+        scanf("%d", &alunos);
+        printf("\n-------------------------------");
+        }while (alunos > cont || alunos <= 0);
+    
+    switch (alunos)
+    {
+    case 1:
+        printf("\nAluno 1\n");
+        printf("\nNota da Instituição: %.1f", nota1[0]);
+        printf("\nNota do Professor: %.1f", nota2[0]);
+        printf("\nNota Final: %.1f",soma[0]);
+        if (Aprovado[0])
+        {
+            printf("\nStatus: Aprovado");
+        }else{
+            printf("\nStatus: Reprovado");
+        }
+        printf("\n-------------------------------");
+
+        break;
+    case 2:
+        printf("\nAluno 2\n");
+        printf("\nNota da Instituição: %.1f", nota1[1]);
+        printf("\nNota do Professor: %.1f", nota2[1]);
+        printf("\nNota Final: %.1f",soma[1]);
+        if(Aprovado[1])
+        {
+            printf("\nStatus: Aprovado");
+        }else{
+            printf("\nStatus: Reprovado");
+        }
+        printf("\n-------------------------------");
+    break;
+
+    case 3:
+        printf("\nAluno 3\n");
+        printf("\nNota da Instituição: %.1f", nota1[2]);
+        printf("\nNota do Professor: %.1f", nota2[2]);
+        printf("\nNota Final: %.1f",soma[2]);
+        if(Aprovado[2])
+        {
+            printf("\nStatus: Aprovado");
+        }else{
+            printf("\nStatus: Reprovado");
+        }
+        printf("\n-------------------------------");
+
+    break;
+
+    case 4:
+        printf("\nAluno 4\n");
+        printf("\nNota da Instituição: %.1f", nota1[3]);
+        printf("\nNota do Professor: %.1f", nota2[3]);
+        printf("\nNota Final: %.1f",soma[3]);
+        if(Aprovado[3])
+        {
+            printf("\nStatus: Aprovado");
+        }else{
+            printf("\nStatus: Reprovado");
+        }
+        printf("\n-------------------------------");
+
+    break;
+
+    case 5:
+        printf("\nAluno 5\n");
+        printf("\nNota da Instituição: %.1f", nota1[4]);
+        printf("\nNota do Professor: %.1f", nota2[4]);
+        printf("\nNota Final: %.1f",soma[4]);
+        if(Aprovado[4])
+        {
+            printf("\nStatus: Aprovado");
+        }else{
+            printf("\nStatus: Reprovado");
+        }
+        printf("\n-------------------------------");
+
+    break;  
+
+    default:
+        printf("\nAluno não registrado ");
+        printf("\n-------------------------------");
+    }
+    if (cont > 1)
+    {
+        do{
+        printf("\nPor favor usar apenas 's' ou 'n' para sim e não\n");
+        printf("\nDeseja Procurar mais algum aluno?\n");
+        scanf(" %c" , &continuar);//ATENCAO não tirar o espaço do %c, senão o programa le o \n da linha de cima e o codigo se repete apenas uma vez, não entendi esse bug
+        printf("\n-------------------------------");
+        }while(continuar != 's' && continuar != 'n');
+    }
+    
+    }while( continuar == 's');
+    
+    return 0;
+}
+
