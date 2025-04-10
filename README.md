@@ -4,8 +4,6 @@
 
 Objetivo: O projeto tem como objetivo realizar o cálculo das notas dos alunos da BC.
 
-
-
 Documentos a serem entregues:
 
 Requisitos do sistema
@@ -13,17 +11,13 @@ Documento em Português Estruturado
 Linguagem de programação estruturada em C
 Apresentação
 
-
-obs: juntar todos os documentos em pdf para postagem
-
-
-
 Tecnologias a serem utilizadas:
 
 While
 Switch/Case
 If
-Grupo: 4 integrantes
+
+Grupo: 6 integrantes
 
 Fontes de pesquisa (5W2H):
 
