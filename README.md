@@ -30,5 +30,5 @@ Fontes de pesquisa (5W2H):
 Manual do aluno
 Entrevista com o cliente
 
-<br>
+<hr>
 Nova reunião (04/04/25): cliente solicitou a leitura de 100 alunos - não nomes - somente notas - líder solicitou a pesquisa de vetores para implementar no projeto.  
