@@ -9,6 +9,7 @@ int main()
 {
     setlocale(LC_ALL, "Portuguese_Brazil");
     system("cls");
+    srand(50);
 
 	int i,cont, lista;
     char continuar;
@@ -34,15 +35,15 @@ int main()
     {
         
         do{
-            nota1[i] = 0;
+            nota1[i] = rand()% 5 + 1;
             printf("\nQual foi a nota do aluno %d da Instituição?\n", i+1);
-            scanf("%f", &nota1[i]);
+            printf("%.1f", nota1[i]);
         }while(nota1[i] > 5 || nota1[i] < 0); // while verifica se o valor é maior que 5 ou menor que 0
 
         do{
-            nota2[i] = 0;
+            nota2[i] = rand()% 5 + 1;
             printf("\nQual foi a nota do aluno %d do professor?\n", i+1);
-            scanf("%f", &nota2[i]);
+            printf("%.1f", nota2[i]);
         }while(nota2[i] > 5 || nota2[i] < 0); // while verifica se o valor é maior que 5 ou menor que 0
 
         printf("\n-------------------------------");

@@ -9,6 +9,7 @@ int main()
 {
     setlocale(LC_ALL, "Portuguese_Brazil");
     system("cls");
+    srand(50);
 
 	int i,cont, lista;
     char continuar;
@@ -34,24 +35,25 @@ int main()
     {
         
         do{
-            nota1[i] = 0;
+            nota1[i] = rand()% 5 + 1;
             printf("\nQual foi a nota do aluno %d da Instituição?\n", i+1);
-            scanf("%f", &nota1[i]);
+            printf("%.1f\n", nota1[i]);
         }while(nota1[i] > 5 || nota1[i] < 0); // while verifica se o valor é maior que 5 ou menor que 0
 
         do{
-            nota2[i] = 0;
+            nota2[i] = rand()% 5 + 1;
             printf("\nQual foi a nota do aluno %d do professor?\n", i+1);
-            scanf("%f", &nota2[i]);
+            printf("%.1f\n", nota2[i]);
         }while(nota2[i] > 5 || nota2[i] < 0); // while verifica se o valor é maior que 5 ou menor que 0
 
-        printf("\n-------------------------------");
+        printf("\n-------------------------------\n");
         soma[i] = nota2[i] + nota1[i]; // soma dos valores 
 
         //arredondando os valores
         
     }
 
+    system("pause");
     system("cls");
     
     //verificando se aluno estão reprovado
@@ -60,12 +62,13 @@ int main()
         if(soma[i] >= 6)
         {
             printf("\nAluno %d: Aprovado\n", i+1);
-            printf("\n-------------------------------");
+            printf("\n-------------------------------\n");
             Aprovado[i] = true;
         }else{
             do{
+                recup[i] = rand() % 5 + 1;
                 printf("\nQual a nota do aluno %d na recuperação?\n", i+1);
-                scanf("%f", &recup[i]);
+                printf("%.1f\n", recup[i]);
             } while(recup[i] > 5 || recup[i] < 0);
             // verifica se a nota da recuperação é maior que alguma das notas
             if (recup[i] > nota1[i] || recup[i] > nota2[i])
@@ -79,17 +82,17 @@ int main()
                 soma[i] = nota1[i] + nota2[i]; 
                 Aprovado[i] = true;
                 printf("\nAluno %d: Aprovado", i+1);
-                printf("\n-------------------------------");
+                printf("\n-------------------------------\n");
             }else{
                 Aprovado[i] = false;
                 printf("\nAluno %d: Reprovado", i+1);
-                printf("\n-------------------------------");
+                printf("\n-------------------------------\n");
             }
         }
     }
     //Buscando o aluno desejado
    
-    Sleep(1500);
+    system("pause");
     system("cls"); 
 
     printf("\n----------------------------------");
