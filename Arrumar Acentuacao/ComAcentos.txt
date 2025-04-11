@@ -52,6 +52,8 @@ int main()
         
     }
 
+    system("cls");
+    
     //verificando se aluno estão reprovado
     for ( i = 0; i < cont; i++)
     {
@@ -133,7 +135,7 @@ int main()
 
         break;
     case 2:
-        for ( i = 20; i < 30; i++)
+        for ( i = 10; i < 20; i++)
         {
             if (i >= verificar)
             {
@@ -156,7 +158,7 @@ int main()
     break;
 
     case 3:
-        for ( i = 30; i < 40; i++)
+        for ( i = 20; i < 30; i++)
         {
             if (i >= verificar)
             {
@@ -179,7 +181,7 @@ int main()
     break;
 
     case 4:
-        for ( i = 40; i < 50; i++)
+        for ( i = 30; i < 40; i++)
         {
             if (i >= verificar)
             {
@@ -202,7 +204,7 @@ int main()
     break;
 
     case 5:
-        for ( i = 60; i < 70; i++)
+        for ( i = 40; i < 50; i++)
         {
             if (i >= verificar)
             {
@@ -225,7 +227,7 @@ int main()
     break;
     
     case 6:
-        for ( i = 70; i < 80; i++)
+        for ( i = 50; i < 60; i++)
         {
             if (i >= verificar)
             {
@@ -248,7 +250,7 @@ int main()
     break;
 
     case 7:
-        for ( i = 80; i < 90; i++)
+        for ( i = 60; i < 70; i++)
         {
             if (i >= verificar)
             {
@@ -271,6 +273,52 @@ int main()
     break;
 
     case 8:
+        for ( i = 70; i < 80; i++)
+        {
+            if (i >= verificar)
+            {
+                break;
+            }
+            
+            printf("\nAluno %d\n", i + 1);
+            printf("\nNota da Instituição: %.1f", nota1[i]);
+            printf("\nNota do Professor: %.1f", nota2[i]);
+            printf("\nNota Final: %.1f",soma[i]);
+            if (Aprovado[i])
+            {
+                printf("\nStatus: Aprovado");
+            }else{
+                printf("\nStatus: Reprovado");
+            }
+            printf("\n-------------------------------");
+        }
+
+    break;
+
+    case 9:
+        for ( i = 80; i < 90; i++)
+        {
+            if (i >= verificar)
+            {
+                break;
+            }
+            
+            printf("\nAluno %d\n", i + 1);
+            printf("\nNota da Instituição: %.1f", nota1[i]);
+            printf("\nNota do Professor: %.1f", nota2[i]);
+            printf("\nNota Final: %.1f",soma[i]);
+            if (Aprovado[i])
+            {
+                printf("\nStatus: Aprovado");
+            }else{
+                printf("\nStatus: Reprovado");
+            }
+            printf("\n-------------------------------");
+        }
+
+    break;
+
+    case 10:
         for ( i = 90; i < 100; i++)
         {
             if (i >= verificar)
@@ -311,3 +359,4 @@ int main()
     
     return 0;
 }
+

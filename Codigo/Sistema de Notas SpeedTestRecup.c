@@ -194,7 +194,7 @@ int main()
             printf("\nAluno %d\n", i + 1);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
-            printf("\nNota Final: %.1f",soma[i]);
+            printf("\nNota Final: %.1f" ,soma[i]);
             if (Aprovado[i])
             {
                 printf("\nStatus: Aprovado");
