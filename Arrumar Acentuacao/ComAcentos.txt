@@ -10,8 +10,7 @@ int main()
     setlocale(LC_ALL, "Portuguese_Brazil");
     system("cls");
 
-	int i,cont, lista;
-    char continuar;
+	int i,cont, lista, passarLista;
 
     printf("\n------------------------");
     printf("\n    Sistema de Notas    ");
@@ -103,13 +102,14 @@ int main()
     }
     cont = cont/10;
 
+    
     do{
-        do{
         printf("\nEscolha uma lista de alunos desejados de 1 a %d\n", cont);
         scanf("%d", &lista);
         printf("\n-------------------------------");
-        }while (lista > cont || lista <= 0);
-    
+    }while (lista > cont || lista <= 0);
+
+    do{
     switch (lista)
     {
     case 1:
@@ -345,17 +345,40 @@ int main()
         printf("\nLista não encontrada");
         printf("\n-------------------------------");
     }
-    if (cont > 1)
-    {
+    if (cont > 1){
         do{
-        printf("\nPor favor usar apenas 's' ou 'n' para sim e não\n");
-        printf("\nDeseja ir pra proxima lista ou retornar para a anterior?\n");
-        scanf(" %c" , &continuar);//ATENCAO não tirar o espaço do %c, senão o programa le o \n da linha de cima e o codigo se repete apenas uma vez, não entendi esse bug
-        printf("\n-------------------------------");
-        }while(continuar != 's' && continuar != 'n');
-    }
-    
-    }while( continuar == 's');
+            printf("\n[0] Encerrar");
+            printf(" | [1] Anterior");
+            printf(" | [2] Próximo\n");
+            scanf(" %d" , &passarLista);//ATENCAO não tirar o espaço do %d, senão o programa le o \n da linha de cima e o codigo se repete apenas uma vez, não entendi esse bug
+            printf("\n-------------------------------");
+        }while(passarLista != 0 && passarLista != 1 && passarLista != 2);
+
+        switch (passarLista)
+        {
+        case 1:
+            if(lista > 1){
+                system("cls");
+                lista = lista - 1;
+            }else{
+                printf("\nopção invalida");
+            }
+            break;
+        
+        case 2:
+            if(lista < 10){
+                system("cls");
+                lista = lista + 1;
+            }else{
+                printf("\nopção invalida");
+            }
+            break;
+        default:
+            printf("\nAté a Proxima");
+            break;
+        }
+    } 
+    }while( passarLista != 0);
     
     return 0;
 }

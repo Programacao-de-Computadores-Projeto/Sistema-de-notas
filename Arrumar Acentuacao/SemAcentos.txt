@@ -10,8 +10,7 @@ int main()
     setlocale(LC_ALL, "Portuguese_Brazil");
     system("cls");
 
-	int i,cont, lista;
-    char continuar;
+	int i,cont, lista, passarLista;
 
     printf("\n------------------------");
     printf("\n    Sistema de Notas    ");
@@ -23,7 +22,7 @@ int main()
     printf("\n-------------------------------");
     }while(cont > 100 || cont <=0);
 
-    //variaveis que vao armazenar o valor do cont
+    //variaveis que vão armazenar o valor do cont
     float nota1[cont], nota2[cont], recup[cont],soma[cont];
     bool Aprovado[cont];
 
@@ -35,7 +34,7 @@ int main()
         
         do{
             nota1[i] = 0;
-            printf("\nQual foi a nota do aluno %d da Instituicao?\n", i+1);
+            printf("\nQual foi a nota do aluno %d da Instituição?\n", i+1);
             scanf("%f", &nota1[i]);
         }while(nota1[i] > 5 || nota1[i] < 0); // while verifica se o valor é maior que 5 ou menor que 0
 
@@ -64,10 +63,10 @@ int main()
             Aprovado[i] = true;
         }else{
             do{
-                printf("\nQual a nota do aluno %d na recuperacao?\n", i+1);
+                printf("\nQual a nota do aluno %d na recuperação?\n", i+1);
                 scanf("%f", &recup[i]);
             } while(recup[i] > 5 || recup[i] < 0);
-            // verifica se a nota da recuperacao é maior que alguma das notas
+            // verifica se a nota da recuperação é maior que alguma das notas
             if (recup[i] > nota1[i] || recup[i] > nota2[i])
             {
                 if (nota1[i] > nota2[i])//troca das notas
@@ -103,13 +102,14 @@ int main()
     }
     cont = cont/10;
 
+    
     do{
-        do{
         printf("\nEscolha uma lista de alunos desejados de 1 a %d\n", cont);
         scanf("%d", &lista);
         printf("\n-------------------------------");
-        }while (lista > cont || lista <= 0);
-    
+    }while (lista > cont || lista <= 0);
+
+    do{
     switch (lista)
     {
     case 1:
@@ -121,7 +121,7 @@ int main()
             }
             
             printf("\nAluno %d\n", i + 1);
-            printf("\nNota da Instituicao: %.1f", nota1[i]);
+            printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
             if (Aprovado[i])
@@ -143,7 +143,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
-            printf("\nNota da Instituicao: %.1f", nota1[i]);
+            printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
             if (Aprovado[i])
@@ -166,7 +166,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
-            printf("\nNota da Instituicao: %.1f", nota1[i]);
+            printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
             if (Aprovado[i])
@@ -189,7 +189,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
-            printf("\nNota da Instituicao: %.1f", nota1[i]);
+            printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
             if (Aprovado[i])
@@ -212,7 +212,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
-            printf("\nNota da Instituicao: %.1f", nota1[i]);
+            printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
             if (Aprovado[i])
@@ -235,7 +235,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
-            printf("\nNota da Instituicao: %.1f", nota1[i]);
+            printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
             if (Aprovado[i])
@@ -258,7 +258,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
-            printf("\nNota da Instituicao: %.1f", nota1[i]);
+            printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
             if (Aprovado[i])
@@ -281,7 +281,7 @@ int main()
             }
             
             printf("\nAluno %d\n", i + 1);
-            printf("\nNota da Instituicao: %.1f", nota1[i]);
+            printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
             if (Aprovado[i])
@@ -304,7 +304,7 @@ int main()
             }
             
             printf("\nAluno %d\n", i + 1);
-            printf("\nNota da Instituicao: %.1f", nota1[i]);
+            printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
             if (Aprovado[i])
@@ -327,7 +327,7 @@ int main()
             }
             
             printf("\nAluno %d\n", i + 1);
-            printf("\nNota da Instituicao: %.1f", nota1[i]);
+            printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
             if (Aprovado[i])
@@ -342,20 +342,43 @@ int main()
     break;
 
     default:
-        printf("\nLista nao encontrada");
+        printf("\nLista não encontrada");
         printf("\n-------------------------------");
     }
-    if (cont > 1)
-    {
+    if (cont > 1){
         do{
-        printf("\nPor favor usar apenas 's' ou 'n' para sim e não\n");
-        printf("\nDeseja ir pra proxima lista ou retornar para a anterior?\n");
-        scanf(" %c" , &continuar);//ATENCAO não tirar o espaço do %c, senao o programa le o \n da linha de cima e o codigo se repete apenas uma vez, não entendi esse bug
-        printf("\n-------------------------------");
-        }while(continuar != 's' && continuar != 'n');
-    }
-    
-    }while( continuar == 's');
+            printf("\n[0] Encerrar");
+            printf(" | [1] Anterior");
+            printf(" | [2] Próximo\n");
+            scanf(" %d" , &passarLista);//ATENCAO não tirar o espaço do %d, senão o programa le o \n da linha de cima e o codigo se repete apenas uma vez, não entendi esse bug
+            printf("\n-------------------------------");
+        }while(passarLista != 0 && passarLista != 1 && passarLista != 2);
+
+        switch (passarLista)
+        {
+        case 1:
+            if(lista > 1){
+                system("cls");
+                lista = lista - 1;
+            }else{
+                printf("\nopção invalida");
+            }
+            break;
+        
+        case 2:
+            if(lista < 10){
+                system("cls");
+                lista = lista + 1;
+            }else{
+                printf("\nopção invalida");
+            }
+            break;
+        default:
+            printf("\nAté a Proxima");
+            break;
+        }
+    } 
+    }while( passarLista != 0);
     
     return 0;
 }
