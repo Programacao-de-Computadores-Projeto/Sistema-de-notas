@@ -349,7 +349,7 @@ int main()
         do{
             printf("\n[0] Encerrar");
             printf(" | [1] Anterior");
-            printf(" | [2] Próximo\n");
+            printf(" | [2] Proximo\n");
             scanf(" %d" , &passarLista);//ATENCAO não tirar o espaço do %d, senão o programa le o \n da linha de cima e o codigo se repete apenas uma vez, não entendi esse bug
             printf("\n-------------------------------");
         }while(passarLista != 0 && passarLista != 1 && passarLista != 2);
@@ -361,7 +361,7 @@ int main()
                 system("cls");
                 lista = lista - 1;
             }else{
-                printf("\nopção invalida");
+                printf("\nopcao invalida");
             }
             break;
         
@@ -370,11 +370,11 @@ int main()
                 system("cls");
                 lista = lista + 1;
             }else{
-                printf("\nopção invalida");
+                printf("\nopcao invalida");
             }
             break;
         default:
-            printf("\nAté a Proxima");
+            printf("\nAte a Proxima");
             break;
         }
     } 
