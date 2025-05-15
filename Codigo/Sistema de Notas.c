@@ -25,6 +25,7 @@ int main()
 
     //variaveis que vão armazenar o valor do cont
     float nota1[cont], nota2[cont], recup[cont], soma[cont];
+    int RGM[cont];
     char nomeAluno[cont][30];
     bool Aprovado[cont];
 
@@ -33,11 +34,14 @@ int main()
     //anotação das repostas dos alunos
     for( i = 0; i < cont; i++)
     {    
-        printf("Qual o nome do Aluno %d?\n", i + 1);
+        printf("\nQual o nome do Aluno %d?\n", i + 1);
         fflush(stdin);
         fgets(nomeAluno[i], 30, stdin);
 
         nomeAluno[i][strcspn(nomeAluno[i], "\n")] = 0;
+
+        printf("\nQual o RGM?\n");
+        scanf("%d", &RGM[i]);
 
         do{
             nota1[i] = 0;
@@ -131,6 +135,7 @@ int main()
             
             printf("\nAluno %d\n", i + 1);
             printf("\nNome: %s", nomeAluno[i]);
+            printf("\nRGM: %d", RGM[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -154,6 +159,7 @@ int main()
 
             printf("\nAluno %d\n", i + 1);
             printf("\nNome: %s", nomeAluno[i]);
+            printf("\nRGM: %d", RGM[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -178,6 +184,7 @@ int main()
 
             printf("\nAluno %d\n", i + 1);
             printf("\nNome: %s", nomeAluno[i]);
+            printf("\nRGM: %d", RGM[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -202,6 +209,7 @@ int main()
 
             printf("\nAluno %d\n", i + 1);
             printf("\nNome: %s", nomeAluno[i]);
+            printf("\nRGM: %d", RGM[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -226,6 +234,7 @@ int main()
 
             printf("\nAluno %d\n", i + 1);
             printf("\nNome: %s", nomeAluno[i]);
+            printf("\nRGM: %d", RGM[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -250,6 +259,7 @@ int main()
 
             printf("\nAluno %d\n", i + 1);
             printf("\nNome: %s", nomeAluno[i]);
+            printf("\nRGM: %d", RGM[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -274,6 +284,7 @@ int main()
 
             printf("\nAluno %d\n", i + 1);
             printf("\nNome: %s", nomeAluno[i]);
+            printf("\nRGM: %d", RGM[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -298,6 +309,7 @@ int main()
 
             printf("\nAluno %d\n", i + 1);
             printf("\nNome: %s", nomeAluno[i]);
+            printf("\nRGM: %d", RGM[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -322,6 +334,7 @@ int main()
 
             printf("\nAluno %d\n", i + 1);
             printf("\nNome: %s", nomeAluno[i]);
+            printf("\nRGM: %d", RGM[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -346,6 +359,7 @@ int main()
 
             printf("\nAluno %d\n", i + 1);
             printf("\nNome: %s", nomeAluno[i]);
+            printf("\nRGM: %d", RGM[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
