@@ -25,6 +25,7 @@ int main()
 
     //variaveis que vão armazenar o valor do cont
     float nota1[cont], nota2[cont], recup[cont], soma[cont];
+    char nomeAluno[cont][30];
     bool Aprovado[cont];
 
     int verificar = cont;
@@ -32,15 +33,21 @@ int main()
     //anotação das repostas dos alunos
     for( i = 0; i < cont; i++)
     {    
+        printf("Qual o nome do Aluno %d?\n", i + 1);
+        fflush(stdin);
+        fgets(nomeAluno[i], 30, stdin);
+
+        nomeAluno[i][strcspn(nomeAluno[i], "\n")] = 0;
+
         do{
             nota1[i] = 0;
-            printf("\nQual foi a nota do aluno %d da Instituição?\n", i+1);
+            printf("\nQual foi a nota do aluno %s da Instituição?\n", nomeAluno[i]);
             scanf("%f", &nota1[i]);
         }while(nota1[i] > 5 || nota1[i] < 0); // while verifica se o valor é maior que 5 ou menor que 0
 
         do{
             nota2[i] = 0;
-            printf("\nQual foi a nota do aluno %d do professor?\n", i+1);
+            printf("\nQual foi a nota do aluno %s do professor?\n", nomeAluno[i]);
             scanf("%f", &nota2[i]);
         }while(nota2[i] > 5 || nota2[i] < 0); // while verifica se o valor é maior que 5 ou menor que 0
 
@@ -63,7 +70,7 @@ int main()
             Aprovado[i] = true;
         }else{
             do{
-                printf("\nQual a nota do aluno %d na recuperação?\n", i+1);
+                printf("\nQual a nota do aluno %s na recuperação?\n", nomeAluno[i]);
                 scanf("%f", &recup[i]);
             } while(recup[i] > 5 || recup[i] < 0);
             // verifica se a nota da recuperação é maior que alguma das notas
@@ -80,11 +87,11 @@ int main()
 
                 Aprovado[i] = true;
                 
-                printf("\nAluno %d: Aprovado", i+1);
+                printf("\nAluno %s: Aprovado", nomeAluno[i]);
                 printf("\n-------------------------------");
             }else{
                 Aprovado[i] = false;
-                printf("\nAluno %d: Reprovado", i+1);
+                printf("\nAluno %s: Reprovado", nomeAluno[i]);
                 printf("\n-------------------------------");
             }
         }
@@ -123,6 +130,7 @@ int main()
             }
             
             printf("\nAluno %d\n", i + 1);
+            printf("\nNome: %s", nomeAluno[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -145,6 +153,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
+            printf("\nNome: %s", nomeAluno[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -168,6 +177,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
+            printf("\nNome: %s", nomeAluno[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -191,6 +201,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
+            printf("\nNome: %s", nomeAluno[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -214,6 +225,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
+            printf("\nNome: %s", nomeAluno[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -237,6 +249,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
+            printf("\nNome: %s", nomeAluno[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -260,6 +273,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
+            printf("\nNome: %s", nomeAluno[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -283,6 +297,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
+            printf("\nNome: %s", nomeAluno[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -306,6 +321,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
+            printf("\nNome: %s", nomeAluno[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
@@ -329,6 +345,7 @@ int main()
             }
 
             printf("\nAluno %d\n", i + 1);
+            printf("\nNome: %s", nomeAluno[i]);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
             printf("\nNota Final: %.1f",soma[i]);
