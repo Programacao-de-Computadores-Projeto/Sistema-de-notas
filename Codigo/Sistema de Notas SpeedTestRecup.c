@@ -12,6 +12,7 @@ int main()
     srand(50);
 
 	int i,cont, lista, passarLista;
+    passarLista = 0;
 
     printf("\n------------------------");
     printf("\n    Sistema de Notas    ");

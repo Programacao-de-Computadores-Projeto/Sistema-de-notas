@@ -10,7 +10,8 @@ int main()
     setlocale(LC_ALL, "Portuguese_Brazil");
     system("cls");
 
-	int i,cont, lista, passarLista;
+	int i, cont, lista, passarLista;
+    passarLista = 0;
 
     printf("\n------------------------");
     printf("\n    Sistema de Notas    ");
@@ -23,15 +24,14 @@ int main()
     }while(cont > 100 || cont <=0);
 
     //variaveis que vão armazenar o valor do cont
-    float nota1[cont], nota2[cont], recup[cont],soma[cont];
+    float nota1[cont], nota2[cont], recup[cont], soma[cont];
     bool Aprovado[cont];
 
     int verificar = cont;
 
     //anotação das repostas dos alunos
     for( i = 0; i < cont; i++)
-    {
-        
+    {    
         do{
             nota1[i] = 0;
             printf("\nQual foi a nota do aluno %d da Instituição?\n", i+1);
@@ -75,8 +75,11 @@ int main()
                 }else{
                     nota1[i] = recup[i];
                 }
+
                 soma[i] = nota1[i] + nota2[i]; 
+
                 Aprovado[i] = true;
+                
                 printf("\nAluno %d: Aprovado", i+1);
                 printf("\n-------------------------------");
             }else{
@@ -101,11 +104,10 @@ int main()
         cont = ceil(cont / 10 + 1)*10;
     }
     cont = cont/10;
-
     
     do{
         printf("\nEscolha uma lista de alunos desejados de 1 a %d\n", cont);
-        scanf("%d", &lista);
+        scanf(" %d", &lista);
         printf("\n-------------------------------");
     }while (lista > cont || lista <= 0);
 
@@ -114,7 +116,7 @@ int main()
     {
     case 1:
         for ( i = 0; i < 10; i++)
-        {
+        {   
             if (i >= verificar)
             {
                 break;
@@ -274,12 +276,12 @@ int main()
 
     case 8:
         for ( i = 70; i < 80; i++)
-        {
+        {         
             if (i >= verificar)
             {
                 break;
             }
-            
+
             printf("\nAluno %d\n", i + 1);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
@@ -297,12 +299,12 @@ int main()
 
     case 9:
         for ( i = 80; i < 90; i++)
-        {
+        {       
             if (i >= verificar)
             {
                 break;
             }
-            
+
             printf("\nAluno %d\n", i + 1);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
@@ -320,12 +322,12 @@ int main()
 
     case 10:
         for ( i = 90; i < 100; i++)
-        {
+        {      
             if (i >= verificar)
             {
                 break;
             }
-            
+
             printf("\nAluno %d\n", i + 1);
             printf("\nNota da Instituição: %.1f", nota1[i]);
             printf("\nNota do Professor: %.1f", nota2[i]);
@@ -345,6 +347,7 @@ int main()
         printf("\nLista não encontrada");
         printf("\n-------------------------------");
     }
+
     if (cont > 1){
         do{
             printf("\n[0] Encerrar");
@@ -378,7 +381,7 @@ int main()
             break;
         }
     } 
-    }while( passarLista != 0);
+    }while(passarLista != 0);
     
     return 0;
 }

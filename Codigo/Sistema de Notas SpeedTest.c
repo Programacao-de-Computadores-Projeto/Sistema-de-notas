@@ -12,6 +12,7 @@ int main()
     srand(50);
 
 	int i,cont, lista, passarLista;
+    passarLista = 0;
 
     printf("\n------------------------");
     printf("\n    Sistema de Notas    ");
@@ -184,10 +185,7 @@ int main()
     case 4:
         for ( i = 30; i < 40; i++)
         {
-            if (i >= verificar)
-            {
-                break;
-            }
+            
 
             printf("\nAluno %d\n", i + 1);
             printf("\nNota da Institui��o: %.1f", nota1[i]);
