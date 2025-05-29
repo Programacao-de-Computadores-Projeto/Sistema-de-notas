@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -32,7 +33,7 @@ int main() {
     printf("\n------------------------");
 
     do {
-        printf("\nQuantas notas gostaria de Registrar? (1 a %d): ", MAX_ALUNOS);
+        printf("\nQuantas notas gostaria de Registrar? (1 a %d)\n", MAX_ALUNOS);
         scanf("%d", &cont);
     } while (cont <= 0 || cont > MAX_ALUNOS);
 
@@ -88,9 +89,10 @@ void MenuFinal(int *cont, int verificar, char nomeAluno[][30], int RGM[], float 
                 break;
             case 4: {
                 int indice;
-                printf("\nInforme o numero do aluno que deseja excluir (1 a %d): ", *cont -1);
+                printf("\nInforme o numero do aluno que deseja excluir (1 a %d): ", *cont );
                 scanf("%d", &indice);
                 if (indice >= 0 && indice < *cont) {
+                    verificar--;
                     ExcluirAluno(indice, cont, nomeAluno, RGM, nota1, nota2, soma, Aprovado);
                 } else {
                     printf("Índice inválido.\n");
@@ -131,6 +133,7 @@ void RegistrarAlunos(int cont, char nomeAluno[][30], int RGM[], float nota1[], f
             scanf("%f", &nota2[i]);
         } while (nota2[i] < 0 || nota2[i] > 5);
 
+        printf("\n------------------\n");
         soma[i] = nota1[i] + nota2[i];
     }
 }
@@ -157,6 +160,7 @@ void NovoAluno(int i, char nomeAluno[][30], int RGM[], float nota1[], float nota
     } while (nota2[i] < 0 || nota2[i] > 5);
 
     soma[i] = nota1[i] + nota2[i];
+    printf("\n------------------\n");
 
     Aprovado[i] = (soma[i] >= 6);
 }
@@ -197,7 +201,6 @@ void Lista(int cont, int verificar, char nomeAluno[][30], int RGM[], float nota1
                 case 1:
                     if (lista > 1) {
                         lista--;
-                        system("cls");
                     } else {
                         printf("\nOpção inválida\n");
                     }
@@ -205,7 +208,6 @@ void Lista(int cont, int verificar, char nomeAluno[][30], int RGM[], float nota1
                 case 2:
                     if (lista < totalListas) {
                         lista++;
-                        system("cls");
                     } else {
                         printf("\nOpção inválida\n");
                     }
@@ -225,10 +227,12 @@ void Recuperacao(int cont, char nomeAluno[][30], float nota1[], float nota2[], f
         if (soma[i] >= 6) {
             Aprovado[i] = true;
             printf("\nAluno %s: Aprovado\n", nomeAluno[i]);
+            printf("\n------------------\n");
         } else {
             do {
                 printf("\nQual é a nota de recuperação de %s: ", nomeAluno[i]);
                 scanf("%f", &recup[i]);
+                printf("\n------------------\n");
             } while (recup[i] < 0 || recup[i] > 5);
 
             if (recup[i] > nota1[i] || recup[i] > nota2[i]) {
@@ -238,18 +242,23 @@ void Recuperacao(int cont, char nomeAluno[][30], float nota1[], float nota2[], f
                     nota2[i] = recup[i];
                 }
                 soma[i] = nota1[i] + nota2[i];
-                Aprovado[i] = true;
-                printf("\nAluno %s: Aprovado\n", nomeAluno[i]);
-            } else {
-                Aprovado[i] = false;
-                printf("\nAluno %s: Reprovado\n", nomeAluno[i]);
-            }
+
+                if (soma[i] >= 6) {
+                    Aprovado[i] = true;
+                    printf("\nAluno %s: Aprovado\n", nomeAluno[i]);
+                    printf("\n------------------\n");
+                }else {
+                    Aprovado[i] = false;
+                    printf("\nAluno %s: Reprovado\n", nomeAluno[i]);
+                    printf("\n------------------\n");
+                }   
+            } 
         }
     }
 }
 
 void ExcluirAluno(int indice, int *cont, char nomeAluno[][30], int RGM[], float nota1[], float nota2[], float soma[], bool Aprovado[]) {
-    for (int i = indice - 1 ; i < (*cont) - 1; i++) {
+    for (int i = indice - 1 ; i < (*cont); i++) {
         strcpy(nomeAluno[i], nomeAluno[i + 1]);
         RGM[i] = RGM[i + 1];
         nota1[i] = nota1[i + 1];
@@ -278,6 +287,7 @@ void BuscarAluno(char nomeAluno[][30], int RGM[], float nota1[], float nota2[], 
             printf("Nota do Professor: %.1f\n", nota2[i]);
             printf("Nota Final: %.1f\n", soma[i]);
             printf("Status: %s\n", Aprovado[i] ? "Aprovado" : "Reprovado");// if e else porém de forma simplificada, igual no javascript
+            printf("\n------------------\n");
             alunoEncontrado = true;
             break;
         }
@@ -286,6 +296,7 @@ void BuscarAluno(char nomeAluno[][30], int RGM[], float nota1[], float nota2[], 
     if (!alunoEncontrado) {
         printf("\nAluno não encontrado.\n");
     }
+    system("pause");
 }
 
 void AlterarAluno(char nomeAluno[][30], int RGM[], float nota1[], float nota2[], float soma[], int cont) {
@@ -303,6 +314,7 @@ void AlterarAluno(char nomeAluno[][30], int RGM[], float nota1[], float nota2[],
             fflush(stdin);
             fgets(nomeAluno[i], 30, stdin);
             nomeAluno[i][strcspn(nomeAluno[i], "\n")] = 0;
+            printf("\n------------------\n");
 
             do {
                 printf("\nQual o RGM? (9 dígitos)\n");
@@ -318,6 +330,7 @@ void AlterarAluno(char nomeAluno[][30], int RGM[], float nota1[], float nota2[],
                 printf("\nNota do Professor: ");
                 scanf("%f", &nota2[i]);
             } while (nota2[i] < 0 || nota2[i] > 5);
+            printf("\n------------------\n");
 
             soma[i] = nota1[i] + nota2[i];
             alunoEncontrado = true;
