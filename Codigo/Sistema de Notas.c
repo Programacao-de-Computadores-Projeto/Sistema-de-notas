@@ -119,7 +119,7 @@ void RegistrarAlunos(int cont, char nomeAluno[][30], int RGM[], float nota1[], f
         do {
             printf("\nQual o RGM? (9 dígitos)\n");
             scanf("%d", &RGM[i]);
-        } while (RGM[i] < 100000000 || RGM[i] >= 1000000000); // RGM deve ter 9 dígitos
+        } while (RGM[i] < 100000000 || RGM[i] >= 1000000000);
 
         do {
             printf("\nNota da Instituição: ");
