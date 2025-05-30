@@ -169,13 +169,13 @@ void Lista(int cont, int verificar, char nomeAluno[][30], int RGM[], float nota1
     int lista, passarLista = 0;
     int totalListas = (int)ceil(verificar / 10.0);
 
-    do {
+    
         do {
             printf("\nEscolha uma lista de alunos desejados de 1 a %d\n", totalListas);
             scanf(" %d", &lista);
             printf("\n-------------------------------");
         } while (lista > totalListas || lista <= 0);
-
+    do {
         int inicio = (lista - 1) * 10;
         int fim = inicio + 10;
 
